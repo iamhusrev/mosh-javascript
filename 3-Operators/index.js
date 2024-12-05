@@ -100,3 +100,17 @@ console.log("47 ->", ff instanceof String); // false
 console.log("48 ->", ff instanceof Boolean); // false
 console.log("49 ->", ff instanceof RegExp); // false
 console.log("50 ->", ff instanceof Date); // false
+
+//11. Logical Operators with Non-Boolean Operands
+let hh = 10;
+let ii = 20;
+let jj = false;
+let kk = "";
+let ll = null;
+let mm = undefined;
+let nn = NaN;
+console.log("51 ->", hh && ii); // 20
+console.log("52 ->", jj || kk); // ""
+console.log("53 ->", ll && mm); // null
+console.log("54 ->", nn || ii); // 20
+
