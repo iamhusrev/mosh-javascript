@@ -77,6 +77,7 @@ let v = 10;
 let w = 20;
 let result = v > w ? "Greater" : "Smaller";
 console.log("40 ->", result); // Smaller
+
 // 8. Comma Operator
 let aa = 10;
 let bb = 20;
