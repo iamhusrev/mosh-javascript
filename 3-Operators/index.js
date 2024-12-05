@@ -49,9 +49,53 @@ console.log("26 ->", y <= z); // true
 console.log("27 ->", y === z); // false
 
 // 4. Logical Operators
+let p = true;
+let q = false;
+console.log("28 ->", p && q); // false
+console.log("29 ->", p || q); // true
+console.log("30 ->", !p); // false
+
 // 5. Bitwise Operators
+let r = 2; // 10
+let s = 3; // 11
+console.log("31 ->", r & s); // 2
+console.log("32 ->", r | s); // 3
+console.log("33 ->", r ^ s); // 1
+console.log("34 ->", ~r); // -3
+console.log("35 ->", r << 1); // 4
+console.log("36 ->", r >> 1); // 1
+console.log("37 ->", r >>> 1); // 1
+
 // 6. String Operators
+let t = "Hello";
+let u = "World";
+console.log("38 ->", t + u); // HelloWorld
+console.log("39 ->", (t += u)); // HelloWorld
+
 // 7. Conditional (Ternary) Operator
+let v = 10;
+let w = 20;
+let result = v > w ? "Greater" : "Smaller";
+console.log("40 ->", result); // Smaller
 // 8. Comma Operator
+let aa = 10;
+let bb = 20;
+let cc = (aa++, bb++);
+console.log("41 ->", cc); // 20
+
 // 9. Unary Operators
+let dd = 10;
+let ee = -dd;
+console.log("42 ->", ee); // -10
+
 // 10. Relational Operators
+let ff = 10;
+let gg = 20;
+console.log("43 ->", ff instanceof Number); // false
+console.log("44 ->", ff instanceof Object); // false
+console.log("45 ->", ff instanceof Function); // false
+console.log("46 ->", ff instanceof Array); // false
+console.log("47 ->", ff instanceof String); // false
+console.log("48 ->", ff instanceof Boolean); // false
+console.log("49 ->", ff instanceof RegExp); // false
+console.log("50 ->", ff instanceof Date); // false
