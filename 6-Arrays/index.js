@@ -194,11 +194,74 @@ console.log("//! Exercise 3 - Except");
 
 function except(array, excluded) {
   const output = [];
-  for (let element of array) if (!excluded.includes(element)) output.push(element);
+  for (let element of array)
+    if (!excluded.includes(element)) output.push(element);
   return output;
 }
 
 const output = except(numbers2, [1, 2]);
 console.log(output);
 
+//! Exercise 4 - Moving an Element
+console.log("//! Exercise 4 - Moving an Element");
 
+function move(array, index, offset) {
+  const position = index + offset;
+  if (position >= array.length || position < 0) {
+    console.error("Invalid offset.");
+    return;
+  }
+
+  const output = [...array];
+  const element = output.splice(index, 1)[0];
+  output.splice(position, 0, element);
+  return output;
+}
+
+const output2 = move(numbers2, 0, 1);
+console.log(output2);
+
+//! Exercise 5 - Count Occurrences
+console.log("//! Exercise 5 - Count Occurrences");
+
+function countOccurrences(array, searchElement) {
+  return array.reduce((accumulator, current) => {
+    const occurrence = current === searchElement ? 1 : 0;
+    return accumulator + occurrence;
+  }, 0);
+}
+
+const count = countOccurrences(numbers2, 1);
+console.log(count);
+
+//! Exercise 6 - Get Max
+console.log("//! Exercise 6 - Get Max");
+
+function getMax(array) {
+  if (array.length === 0) return undefined;
+  array.reduce((accumulator, current) => {
+    return accumulator > current ? accumulator : current;
+  });
+}
+
+const max = getMax(numbers2);
+console.log(max);
+
+//! Exercise 7 - Movies
+console.log("//! Exercise 7 - Movies");
+
+const movies = [
+  { title: "a", year: 2018, rating: 4.5 },
+  { title: "b", year: 2018, rating: 4.7 },
+  { title: "c", year: 2018, rating: 3 },
+  { title: "d", year: 2017, rating: 4.5 },
+  { title: "d", year: 2017, rating: 4.5 },
+];
+
+const titles = movies
+  .filter((movie) => movie.year === 2018 && movie.rating >= 4)
+  .sort((a, b) => a.rating - b.rating)
+  .reverse()
+  .map((movie) => movie.title);
+
+console.log(titles);
