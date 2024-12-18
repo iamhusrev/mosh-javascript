@@ -188,3 +188,17 @@ function includes(array, searchElement) {
 }
 
 console.log(includes(numbers2, 1));
+
+//! Exercise 3 - Except
+console.log("//! Exercise 3 - Except");
+
+function except(array, excluded) {
+  const output = [];
+  for (let element of array) if (!excluded.includes(element)) output.push(element);
+  return output;
+}
+
+const output = except(numbers2, [1, 2]);
+console.log(output);
+
+
