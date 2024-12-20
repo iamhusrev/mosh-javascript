@@ -14,6 +14,7 @@ const speakArrow = () => {
 };
 
 //! Arguments & Parameters
+console.log("=================Arguments & Parameters===================");
 const speak1 = function (name = "John", time = "night") {
   console.log(arguments);
   console.log(`Good ${time} ${name}`);
@@ -31,6 +32,7 @@ function sum(a, b) {
 console.log(sum(1, 2, 3, 4, 5));
 
 //! The Rest Operator-Parameters
+console.log("=================The Rest Operator-Parameters===================");
 const sum1 = function (a, b, ...args) {
   console.log(args);
   let total = 0;
@@ -61,6 +63,7 @@ const interest = function (principal, rate = 3.5, years = 5) {
 };
 
 //! Getters & Setters
+console.log("=================Getters & Setters===================");
 const person1 = {
   firstName: "John",
   lastName: "Doe",
@@ -78,6 +81,7 @@ person1.fullName = "Mario Rossi";
 console.log(person1.fullName);
 
 //! Try & Catch
+console.log("=================Try & Catch===================");
 const convertToRs = (dollar) => {
   if (typeof dollar === "number") return dollar * 64;
   throw Error("Amount needs to be in number");
@@ -91,6 +95,7 @@ try {
 }
 
 //! Local vs Global Scope
+console.log("=================Local vs Global Scope===================");
 const message = "Hello";
 
 function greet1() {
@@ -138,6 +143,7 @@ const func1 = outer1();
 func1();
 
 //! let vs var
+console.log("=================let vs var===================");
 // 1. let is block scoped
 for (let i = 0; i < 5; i++) {
   console.log(i);
@@ -153,6 +159,7 @@ for (var i = 0; i < 5; i++) {
 console.log(i);
 
 //! this Keyword
+console.log("=================this Keyword===================");
 
 //! Method
 const video = {
@@ -171,5 +178,25 @@ function playVideo() {
 
 playVideo();
 
+//! Changing this
+console.log("=================Changing this===================");
+function playVideo1() {
+  console.log(this);
+}
 
+playVideo1.call({ name: "John" }, 1, 2);
+playVideo1.apply({ name: "John" }, [1, 2]);
+playVideo1.bind({ name: "John" })();
+playVideo1();
 
+const video1 = {
+  title: "a",
+  tags: ["a", "b", "c"],
+  showTags() {
+    this.tags.forEach((tag) => {
+      console.log(this.title, tag);
+    });
+  },
+};
+
+video1.showTags();
