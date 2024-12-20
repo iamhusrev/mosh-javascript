@@ -200,3 +200,32 @@ const video1 = {
 };
 
 video1.showTags();
+
+//! Exercise 1
+console.log("=================Exercise 1===================");
+const address = {
+  street: "a",
+  city: "b",
+  zipCode: "c",
+};
+
+function showAddress(address) {
+
+  for (let key in address) {
+    console.log(key, address[key]);
+  }
+}
+
+showAddress(address);
+
+//! Exercise 2
+console.log("=================Exercise 2===================");
+const address1 = createAddress("a", "b", "c");
+
+function createAddress(street, city, zipCode) {
+  return {
+    street,
+    city,
+    zipCode,
+  };
+}
